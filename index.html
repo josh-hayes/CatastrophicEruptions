@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Japan–Aotearoa Catastrophic Eruption Planning</title>
+  <meta name="description" content="Collaborative research programme advancing catastrophic eruption planning across Japan and Aotearoa New Zealand." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            ink: {
+              50: '#f8fafc', 100: '#eef2f6', 200: '#d9e1ea', 300: '#b8c4d6', 400: '#8fa1bb',
+              500: '#6c86a6', 600: '#4e698c', 700: '#3e5472', 800: '#2c3d55', 900: '#1c293a'
+            },
+            ocean: {
+              50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8',
+              500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e'
+            },
+            pohutukawa: '#b21e35',
+            sakura: '#f6abb6'
+          },
+          boxShadow: {
+            soft: '0 10px 25px -10px rgba(0,0,0,0.25)'
+          },
+          maxWidth: { prose: '68ch' }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { color-scheme: light dark; }
+    html { scroll-behavior: smooth; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.75); }
+    @media (prefers-color-scheme: dark) { .glass { background: rgba(28,41,58,0.6); } }
+  </style>
+</head>
+<body class="bg-ink-50 text-ink-900 dark:bg-ink-900 dark:text-ink-50">
+  <!-- Sticky Nav -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink-900/70 text-white glass">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 font-semibold">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-ocean-500">🌋</span>
+        <span class="tracking-tight">Japan–Aotearoa Catastrophic Eruption Planning</span>
+      </a>
+      <nav class="hidden gap-6 md:flex text-sm font-medium">
+        <a href="#mission" class="hover:text-ocean-300">Mission</a>
+        <a href="#rapid" class="hover:text-ocean-300">Rapid Modelling</a>
+        <a href="#cases" class="hover:text-ocean-300">Case Studies</a>
+        <a href="#network" class="hover:text-ocean-300">Network</a>
+        <a href="#publications" class="hover:text-ocean-300">Publications</a>
+        <a href="#resources" class="hover:text-ocean-300">Resources</a>
+        <a href="#contact" class="hover:text-ocean-300">Contact</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden rounded-lg border border-white/20 px-3 py-2">Menu</button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid grid-cols-2 gap-2 text-sm">
+        <a href="#mission" class="block rounded-lg px-3 py-2 hover:bg-white/10">Mission</a>
+        <a href="#rapid" class="block rounded-lg px-3 py-2 hover:bg-white/10">Rapid Modelling</a>
+        <a href="#cases" class="block rounded-lg px-3 py-2 hover:bg-white/10">Case Studies</a>
+        <a href="#network" class="block rounded-lg px-3 py-2 hover:bg-white/10">Network</a>
+        <a href="#publications" class="block rounded-lg px-3 py-2 hover:bg-white/10">Publications</a>
+        <a href="#resources" class="block rounded-lg px-3 py-2 hover:bg-white/10">Resources</a>
+        <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-white/10">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ocean-900 via-ink-900 to-ink-900"></div>
+    <svg class="absolute -right-24 -top-24 h-[44rem] w-[44rem] opacity-20" viewBox="0 0 600 600" fill="none">
+      <path d="M300 50 L500 550 L100 550 Z" stroke="white" stroke-width="6" fill="url(#grad)"/>
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#38bdf8"/>
+          <stop offset="100%" stop-color="#b21e35"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="mx-auto max-w-7xl px-4 py-24 sm:py-28 lg:py-36 text-white">
+      <div class="max-w-prose">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium ring-1 ring-white/20">Japan × Aotearoa • Collaborative Programme</span>
+        <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">Planning for <span class="text-ocean-300">catastrophic</span> eruptions—science into action</h1>
+        <p class="mt-5 text-lg text-white/90">We co-develop rapid modelling, shared readiness measures, and a trusted trans-Pacific network to prepare for low-frequency, high-consequence eruptions affecting Japan and Aotearoa New Zealand.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#mission" class="rounded-xl bg-ocean-500 px-5 py-3 font-semibold text-white shadow-soft hover:bg-ocean-400">Explore the programme</a>
+          <a href="#contact" class="rounded-xl border border-white/30 px-5 py-3 font-semibold hover:bg-white/10">Get involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section id="mission" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid items-start gap-10 md:grid-cols-2">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight">Mission</h2>
+        <p class="mt-4 text-ink-700 dark:text-ink-200">Build a shared understanding of ashfall risk mitigation across Japan and Aotearoa, recognising distinct physical and cultural contexts. We advance preparedness with <strong>rapid resource estimation models</strong> and apply them to <strong>case-study scenarios</strong> spanning both countries.</p>
+        <ul class="mt-6 space-y-3 text-ink-700 dark:text-ink-200">
+          <li>• Rapid, defensible estimates of equipment, crews, and time for ash response.</li>
+          <li>• Comparable methods and data standards for cross-country learning.</li>
+          <li>• A durable network of researchers, agencies, and communities.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-ink-900/5 dark:bg-ink-800">
+        <h3 class="text-xl font-semibold">Programme pillars</h3>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-xl border border-ink-900/10 p-4">
+            <p class="text-sm font-semibold">Rapid Modelling</p>
+            <p class="mt-1 text-sm text-ink-600 dark:text-ink-300">From hazard to resource demand in hours, not weeks.</p>
+          </div>
+          <div class="rounded-xl border border-ink-900/10 p-4">
+            <p class="text-sm font-semibold">Field-validated Playbooks</p>
+            <p class="mt-1 text-sm text-ink-600 dark:text-ink-300">Tactics that translate across local contexts.</p>
+          </div>
+          <div class="rounded-xl border border-ink-900/10 p-4">
+            <p class="text-sm font-semibold">Network & Exchange</p>
+            <p class="mt-1 text-sm text-ink-600 dark:text-ink-3 00">Two-way learning, joint exercises, open artefacts.</p>
+          </div>
+          <div class="rounded-xl border border-ink-900/10 p-4">
+            <p class="text-sm font-semibold">Open Science</p>
+            <p class="mt-1 text-sm text-ink-600 dark:text-ink-300">Data, code, and docs for reproducibility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rapid Modelling -->
+  <section id="rapid" class="bg-white/60 py-16 dark:bg-ink-800/40">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mb-8 max-w-prose">
+        <h2 class="text-3xl font-bold tracking-tight">Rapid modelling pipeline</h2>
+        <p class="mt-3 text-ink-700 dark:text-ink-200">An end‑to‑end workflow to estimate response needs and likely bottlenecks within the first operational period.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <p class="text-sm font-medium text-ocean-700">Step 1</p>
+          <h3 class="mt-1 text-lg font-semibold">Hazard ingestion</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Raster & probabilistic ashfall layers, scenario libraries.</p>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <p class="text-sm font-medium text-ocean-700">Step 2</p>
+          <h3 class="mt-1 text-lg font-semibold">Impact modelling</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Exposure, asset fragility, disruption & clearance demand.</p>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <p class="text-sm font-medium text-ocean-700">Step 3</p>
+          <h3 class="mt-1 text-lg font-semibold">Operations planning</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Crew allocation, logistics, and mutual‑aid options.</p>
+        </div>
+      </div>
+      <div class="mt-8 rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+        <h4 class="font-semibold">Key outputs</h4>
+        <ul class="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+          <li>• Resource requirement estimates (people, equipment, time)</li>
+          <li>• Priority maps & road restoration timelines</li>
+          <li>• Sensitivity & uncertainty summaries for decision briefs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section id="cases" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="max-w-prose">
+      <h2 class="text-3xl font-bold tracking-tight">Case studies</h2>
+      <p class="mt-3 text-ink-700 dark:text-ink-200">Jointly curated scenarios spanning urban centres, critical corridors, and lifelines important to both nations.</p>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <article class="rounded-2xl border border-ink-900/10 bg-white p-6 shadow-soft dark:bg-ink-800">
+        <h3 class="font-semibold">Tokyo Metropolitan Ashfall</h3>
+        <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Urban clearance demand & transit continuity under widespread fine ash.</p>
+      </article>
+      <article class="rounded-2xl border border-ink-900/10 bg-white p-6 shadow-soft dark:bg-ink-800">
+        <h3 class="font-semibold">Auckland Volcanic Field</h3>
+        <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Interplay of new vent hazards with national logistics.</p>
+      </article>
+      <article class="rounded-2xl border border-ink-900/10 bg-white p-6 shadow-soft dark:bg-ink-800">
+        <h3 class="font-semibold">Trans‑Pacific Supply Chains</h3>
+        <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Implications for aviation, ports, and critical imports.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Network -->
+  <section id="network" class="bg-white/60 py-16 dark:bg-ink-800/40">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="max-w-prose">
+        <h2 class="text-3xl font-bold tracking-tight">Network</h2>
+        <p class="mt-3 text-ink-700 dark:text-ink-200">Researchers, practitioners, iwi/Māori and local communities, emergency managers, ministries, and infrastructure operators.</p>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Join</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Express interest and receive updates.</p>
+          <a href="#contact" class="mt-3 inline-block rounded-lg bg-ocean-600 px-4 py-2 text-sm font-semibold text-white hover:bg-ocean-500">Sign up</a>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Collaborate</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Propose a case study, dataset, or joint exercise.</p>
+          <a href="#resources" class="mt-3 inline-block rounded-lg border border-ink-900/20 px-4 py-2 text-sm font-semibold hover:bg-ink-900/5">Templates</a>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Contribute</h3>
+          <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">Open data/code and bilingual outreach materials.</p>
+          <a href="#publications" class="mt-3 inline-block rounded-lg border border-ink-900/20 px-4 py-2 text-sm font-semibold hover:bg-ink-900/5">See outputs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="max-w-prose">
+      <h2 class="text-3xl font-bold tracking-tight">Publications & outputs</h2>
+      <p class="mt-3 text-ink-700 dark:text-ink-200">Peer‑reviewed papers, technical reports, briefs, and talks (NZ/JP bilingual).
+      </p>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+        <h3 class="font-semibold">Featured</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>• <a class="underline decoration-ocean-500 underline-offset-4 hover:opacity-80" href="#">Open-source road restoration model (preprint)</a></li>
+          <li>• <a class="underline decoration-ocean-500 underline-offset-4 hover:opacity-80" href="#">Ashfall mitigation playbook (v0.2)</a></li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+        <h3 class="font-semibold">Data & code</h3>
+        <p class="mt-2 text-sm text-ink-700 dark:text-ink-300">GitHub org, DOIs, and dataset licensing (CC‑BY/ODC‑BY).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section id="resources" class="bg-white/60 py-16 dark:bg-ink-800/40">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="max-w-prose">
+        <h2 class="text-3xl font-bold tracking-tight">Resources</h2>
+        <p class="mt-3 text-ink-700 dark:text-ink-200">Starter kits for partners and students, including templates and data standards.</p>
+      </div>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Case study template</h3>
+          <p class="mt-2 text-sm">Markdown outline for reproducible scenario docs.</p>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Data schema</h3>
+          <p class="mt-2 text-sm">Common fields for hazard, exposure, impact, and ops layers.</p>
+        </div>
+        <div class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800">
+          <h3 class="font-semibold">Style guide</h3>
+          <p class="mt-2 text-sm">Logos, colours, and bilingual terminology (EN/JP).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid gap-10 md:grid-cols-2">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight">Contact</h2>
+        <p class="mt-3 text-ink-700 dark:text-ink-200">Interested in partnering, contributing data/code, or joining the network? Reach out.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:info@example.org" class="rounded-xl bg-ocean-600 px-5 py-3 font-semibold text-white hover:bg-ocean-500">Email the programme</a>
+          <a href="https://github.com/" class="rounded-xl border border-ink-900/20 px-5 py-3 font-semibold hover:bg-ink-900/5">GitHub org</a>
+        </div>
+        <p class="mt-6 text-xs text-ink-500 dark:text-ink-300">Replace the email/GitHub links above with your real details. Add privacy notice if collecting sign‑ups.</p>
+      </div>
+      <form class="rounded-2xl border border-ink-900/10 bg-white p-6 dark:bg-ink-800" onsubmit="event.preventDefault(); alert('Thanks — this demo form is static on GitHub Pages. Connect to Formspree, Netlify Forms or your own endpoint to receive submissions.');">
+        <label class="block text-sm font-medium">Your name
+          <input required class="mt-1 w-full rounded-lg border border-ink-900/20 bg-white/90 p-2 text-ink-900 dark:bg-ink-900 dark:text-ink-50" placeholder="Jane Doe" />
+        </label>
+        <label class="mt-4 block text-sm font-medium">Email
+          <input type="email" required class="mt-1 w-full rounded-lg border border-ink-900/20 bg-white/90 p-2 text-ink-900 dark:bg-ink-900 dark:text-ink-50" placeholder="jane@example.org" />
+        </label>
+        <label class="mt-4 block text-sm font-medium">Message
+          <textarea rows="4" class="mt-1 w-full rounded-lg border border-ink-900/20 bg-white/90 p-2 text-ink-900 dark:bg-ink-900 dark:text-ink-50" placeholder="How I’d like to collaborate…"></textarea>
+        </label>
+        <button class="mt-5 w-full rounded-lg bg-ocean-600 px-4 py-2 font-semibold text-white hover:bg-ocean-500">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink-900/10 bg-white/70 py-10 text-sm dark:border-white/10 dark:bg-ink-900/40">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span id="year"></span> Japan–Aotearoa Catastrophic Eruption Planning</p>
+      <p class="text-ink-600 dark:text-ink-300">Made with open science principles • EN / 日本語</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const mm = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => mm.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
